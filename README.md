@@ -13,4 +13,4 @@
 - SEO cơ bản
 - Quản lý authentication
 
-[Phần tiếp theo](./01-Nextjs.md)
+[Phần tiếp theo](./docs/01-Nextjs.md)

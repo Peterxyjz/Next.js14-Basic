@@ -79,4 +79,4 @@ Ngoài ra có thể deploy trên Vercel, Netlify. Nếu free thì chậm (phù h
 
 App Router, vì nó đã ra đời hơn 1 năm rồi và ổn định. Nó là tương lai của Next.js
 
-[Phần trước đó](./docs.md) || [Phần tiếp theo](./02-Setup-Moi-Truong.md)
+[Phần trước đó](../README.md) || [Phần tiếp theo](./02-Setup-Moi-Truong.md)
