@@ -13,4 +13,4 @@ Cài đặt thư viện
 npx shadcn@latest init
 ```
 
-[Phần trước đó](./03-Init-Project.md) || [Phần tiếp theo](./04-ShadCnUI.md)
+[Phần trước đó](./03-Init-Project.md) || [Phần tiếp theo](./05-Css-Style.md)
