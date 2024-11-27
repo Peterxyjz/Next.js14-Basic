@@ -1,4 +1,4 @@
-# NestJS 14
+# Nest.JS 14 Basic
 
 ## Giới thiệu dự án
 
@@ -15,13 +15,14 @@
 
 ## Mục lục
 
-- [Nest.js là gì](./docs/01-Nextjs.md)
-- [Setup môi trường](./docs/02-Setup-Moi-Truong.md)
-- [Init project](./docs/03-Init-Project.md)
-- [Thư viện ShadCn UI](./docs/04-ShadCnUI.md)
-- [CSS Style](./docs/05-Css-Style.md)
-- [Routing](./docs/06-Routing.md)
-- [Rendering](./docs/07-Rendering.md)
-- [Client component](./docs/08-Client-component.md)
-- [Server component](./docs/09-Server-component.md)
+- [01 - Nest.js là gì](./docs/01-Nextjs.md)
+- [02 - Setup môi trường](./docs/02-Setup-Moi-Truong.md)
+- [03 - Init project](./docs/03-Init-Project.md)
+- [04 - Thư viện ShadCn UI](./docs/04-ShadCnUI.md)
+- [05 - CSS Style](./docs/05-Css-Style.md)
+- [06 - Routing](./docs/06-Routing.md)
+- [07 - Rendering](./docs/07-Rendering.md)
+- [08 - Client component](./docs/08-Client-component.md)
+- [09 - Server component](./docs/09-Server-component.md)
+- [10 - Next.js render component](./docs/10-Render-component.md)
 - [...](./docs/)

@@ -14,4 +14,4 @@
 
 => Ưu tiên dùng Server Component khi có thể
 
-[Phần trước đó](./08-Client-component.md) || [Phần tiếp theo](./09-Server-component.md)
+[Phần trước đó](./08-Client-component.md) || [Phần tiếp theo](./10-Render-component.md)
