@@ -25,5 +25,3 @@
 - [Client component](./docs/08-Client-component.md)
 - [Server component](./docs/09-Server-component.md)
 - [...](./docs/)
-
-[Phần tiếp theo](./docs/01-Nextjs.md)
