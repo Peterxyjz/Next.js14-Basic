@@ -79,4 +79,4 @@ export default function Home() {
 
 Ưu tiên nên dùng: Thẻ ```<Link>```
 
-[Phần trước đó](./05-Css-Style.md) || [Phần tiếp theo](./06-Routing.md)
+[Phần trước đó](./05-Css-Style.md) || [Phần tiếp theo](./07-Rendering.md)

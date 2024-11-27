@@ -12,3 +12,5 @@ Vì next.js có khả năng render code React ở server và client nên đôi k
 Với Next.js, code lúc nào cũng phải phân biệt rõ ràng giữa 2 môi trường này bằng từ khóa `'use client'` hoặc `'use server'`
 
 Ví dụ đang ở môi trường client, muốn truy cập data ở server thì cần phải gửi 1 request mới đến server mới lấy được.
+
+[Phần trước đó](./06-Routing.md) || [Phần tiếp theo](./08-Client-component.md)
