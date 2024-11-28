@@ -15,6 +15,7 @@
 
 ## Mục lục
 
+- [Init Server](./docs/common/Server.md)
 - [01 - Nest.js là gì](./docs/01-Nextjs.md)
 - [02 - Setup môi trường](./docs/02-Setup-Moi-Truong.md)
 - [03 - Init project](./docs/03-Init-Project.md)
@@ -25,5 +26,5 @@
 - [08 - Client component](./docs/08-Client-component.md)
 - [09 - Server component](./docs/09-Server-component.md)
 - [10 - Next.js render component](./docs/10-Render-component.md)
-- [Init Server](./docs/common/Server.md)
+- [11 - Themes & Dark mode](./docs/11-Themes-Darkmode.md)
 - [...](./docs/)

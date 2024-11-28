@@ -32,4 +32,4 @@ Client sẽ tự render ra HTML
 
 Điều này sẽ giúp việc navigation nhanh hơn, nhưng vẫn đảm bảo về SEO
 
-[Phần trước đó](./09-Server-component.md) || [Phần tiếp theo](./10-Render-component.md)
+[Phần trước đó](./09-Server-component.md) || [Phần tiếp theo](./11-Themes-Darkmode.md)

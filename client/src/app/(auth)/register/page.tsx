@@ -1,5 +1,10 @@
+import { ModeToggle } from "@/components/mode-toggle";
+
 export default function RegisterPagge() {
     return (
-        <div>RegisterPagge</div>
+        <>
+            <ModeToggle />
+            <div>RegisterPagge</div>
+        </>
     )
 }
