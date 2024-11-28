@@ -25,4 +25,5 @@
 - [08 - Client component](./docs/08-Client-component.md)
 - [09 - Server component](./docs/09-Server-component.md)
 - [10 - Next.js render component](./docs/10-Render-component.md)
+- [Init Server](./docs/common/Server.md)
 - [...](./docs/)
