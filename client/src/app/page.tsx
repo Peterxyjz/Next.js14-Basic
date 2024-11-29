@@ -1,12 +1,6 @@
-import ButtonRedirect from "@/components/ButtonRedirect";
 import Link from "next/link";
-import { redirect } from "next/navigation"
 
-const isAuth = false;
 export default function Home() {
-  // if (!isAuth) {
-  //   redirect('/login');
-  // }
   return <main>
     <ul>
       <li>
@@ -20,6 +14,5 @@ export default function Home() {
         </Link>
       </li>
     </ul>
-    <ButtonRedirect />
   </main>
 }

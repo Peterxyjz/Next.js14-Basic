@@ -102,6 +102,6 @@ export function ModeToggle() {
 }
 ```
 
-*** npx shadcn@latest add dropdown-menu**
+**npx shadcn@latest add dropdown-menu**
 
 [Phần trước đó](./10-Render-component.md) || [Phần tiếp theo](./11-Themes-Darkmode.md)

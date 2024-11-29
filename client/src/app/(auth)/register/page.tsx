@@ -1,10 +1,13 @@
-import { ModeToggle } from "@/components/mode-toggle";
+import RegisterForm from "@/app/(auth)/register/register-form";
 
-export default function RegisterPagge() {
+const RegisterPage = () => {
+
     return (
-        <>
-            <ModeToggle />
-            <div>RegisterPagge</div>
-        </>
+        <div>
+            <h1>Đăng ký tài khoản</h1>
+            <RegisterForm />
+        </div>
     )
 }
+
+export default RegisterPage;
