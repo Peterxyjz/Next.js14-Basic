@@ -34,7 +34,6 @@ const RegisterForm = () => {
             },
             body: JSON.stringify(values),
         }).then((res) => res.json())
-        console.log("🚀 ~ onSubmit ~ result:", result)
 
     }
     return (
@@ -74,7 +73,7 @@ const RegisterForm = () => {
                             <FormItem>
                                 <FormLabel>Mật khẩu</FormLabel>
                                 <FormControl>
-                                    <Input {...field} />
+                                    <Input {...field} type="password" />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -87,7 +86,7 @@ const RegisterForm = () => {
                             <FormItem>
                                 <FormLabel>Nhập lại mật khẩu</FormLabel>
                                 <FormControl>
-                                    <Input {...field} />
+                                    <Input {...field} type="password" />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
