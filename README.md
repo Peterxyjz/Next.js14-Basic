@@ -27,4 +27,5 @@
 - [09 - Server component](./docs/09-Server-component.md)
 - [10 - Next.js render component](./docs/10-Render-component.md)
 - [11 - Themes & Dark mode](./docs/11-Themes-Darkmode.md)
+- [12 - Quản lý Auth trong Next.js](./docs/12-auth.md)
 - [...](./docs/)
