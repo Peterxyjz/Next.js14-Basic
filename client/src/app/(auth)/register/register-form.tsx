@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/hooks/use-toast"
-import { sessionToken } from "@/lib/http"
 import { RegisterBody, RegisterBodyType } from "@/schemaValidations/auth.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation"
@@ -37,7 +36,6 @@ const RegisterForm = () => {
                 description: result.payload.message
             })
             await authApiRequests.auth({ sessionToken: result.payload.data.token })
-            sessionToken.value = result.payload.data.token
             router.push('/me')
         } catch (error: any) {
             const errors = error.payload.errors as { field: string, message: string }[]
