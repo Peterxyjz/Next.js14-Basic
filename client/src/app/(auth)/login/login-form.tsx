@@ -15,7 +15,6 @@ import { LoginBody, LoginBodyType } from "@/schemaValidations/auth.schema"
 import { useToast } from "@/hooks/use-toast"
 import authApiRequests from "@/apiRequests/auth"
 import { useRouter } from "next/navigation"
-import { sessionToken } from "@/lib/http"
 
 
 const LoginForm = () => {
@@ -36,7 +35,6 @@ const LoginForm = () => {
                 description: result.payload.message
             })
             await authApiRequests.auth({ sessionToken: result.payload.data.token })
-            sessionToken.value = result.payload.data.token
             router.push('/me')
         } catch (error: any) {
             const errors = error.payload.errors as { field: string, message: string }[]

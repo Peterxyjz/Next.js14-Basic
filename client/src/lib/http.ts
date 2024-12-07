@@ -1,5 +1,5 @@
 import envConfig from "@/config";
-import exp from "constants";
+import { LoginResType } from "@/schemaValidations/auth.schema";
 
 type CustomeOptions = RequestInit & {
   baseUrl?: string | undefined;
@@ -29,7 +29,7 @@ class SessionToken {
   }
 }
 
-export const sessionToken = new SessionToken();
+export const clientSessionToken = new SessionToken();
 
 const request = async <Response>(
   method: "GET" | "POST" | "PUT" | "DELETE",
@@ -39,6 +39,9 @@ const request = async <Response>(
   const body = options?.body ? JSON.stringify(options.body) : undefined;
   const baseHeaders = {
     "Content-Type": "application/json",
+    Authorization: clientSessionToken.value
+      ? `Bearer ${clientSessionToken.value}`
+      : "",
   };
   // Nếu không truyền baseUrl (hoặc baseUrl bằng undefined) thì lấy từ envConfig
   // Nếu truyền '' đồng nghĩa là truyền đến next server
@@ -68,6 +71,11 @@ const request = async <Response>(
   };
   if (!res.ok) {
     throw new HttpError(data);
+  }
+  if (["/auth/login", "/auth/register"].includes(url)) {
+    clientSessionToken.value = (payload as LoginResType).data.token;
+  } else if ("/auth/logout".includes(url)) {
+    clientSessionToken.value = "";
   }
   return data;
 };
