@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/hooks/use-toast"
+import { handleErrorApi } from "@/lib/utils"
 import { RegisterBody, RegisterBodyType } from "@/schemaValidations/auth.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation"
@@ -38,22 +39,10 @@ const RegisterForm = () => {
             await authApiRequests.auth({ sessionToken: result.payload.data.token })
             router.push('/me')
         } catch (error: any) {
-            const errors = error.payload.errors as { field: string, message: string }[]
-            const status = error.status as number
-            if (status === 422) {
-                errors.forEach((error) => {
-                    form.setError(error.field as ('email' | 'password'), {
-                        type: 'server',
-                        message: error.message,
-                    })
-                })
-            } else {
-                toast({
-                    title: 'Lỗi',
-                    description: error.payload.message,
-                    variant: 'destructive'
-                })
-            }
+            handleErrorApi({
+                error,
+                setError: form.setError,
+            })
         }
     }
     return (
