@@ -15,9 +15,11 @@ import { handleErrorApi } from "@/lib/utils"
 import { RegisterBody, RegisterBodyType } from "@/schemaValidations/auth.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 
 const RegisterForm = () => {
+    const [loading, setLoading] = useState(false)
     const { toast } = useToast()
     const router = useRouter()
     const form = useForm<RegisterBodyType>({
@@ -31,6 +33,8 @@ const RegisterForm = () => {
     })
 
     async function onSubmit(values: RegisterBodyType) {
+        if (loading) return
+        setLoading(true)
         try {
             const result = await authApiRequests.register(values)
             toast({
@@ -43,6 +47,8 @@ const RegisterForm = () => {
                 error,
                 setError: form.setError,
             })
+        } finally {
+            setLoading(false)
         }
     }
     return (

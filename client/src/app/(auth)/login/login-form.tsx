@@ -16,9 +16,11 @@ import { useToast } from "@/hooks/use-toast"
 import authApiRequests from "@/apiRequests/auth"
 import { useRouter } from "next/navigation"
 import { handleErrorApi } from "@/lib/utils"
+import { useState } from "react"
 
 
 const LoginForm = () => {
+    const [loading, setLoading] = useState(false)
     const { toast } = useToast()
     const router = useRouter()
     const form = useForm<LoginBodyType>({
@@ -30,6 +32,8 @@ const LoginForm = () => {
     })
 
     async function onSubmit(values: LoginBodyType) {
+        if (loading) return
+        setLoading(true)
         try {
             const result = await authApiRequests.login(values)
             toast({
@@ -42,6 +46,8 @@ const LoginForm = () => {
                 error,
                 setError: form.setError,
             })
+        } finally {
+            setLoading(false)
         }
     }
     return (
