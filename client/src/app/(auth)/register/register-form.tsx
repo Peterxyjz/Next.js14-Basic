@@ -1,6 +1,5 @@
 "use client"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import authApiRequests from "@/apiRequests/auth"
 import { Button } from "@/components/ui/button"
 import {
     Form,
@@ -11,10 +10,16 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { useToast } from "@/hooks/use-toast"
+import { sessionToken } from "@/lib/http"
 import { RegisterBody, RegisterBodyType } from "@/schemaValidations/auth.schema"
-import envConfig from "@/config"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useRouter } from "next/navigation"
+import { useForm } from "react-hook-form"
 
 const RegisterForm = () => {
+    const { toast } = useToast()
+    const router = useRouter()
     const form = useForm<RegisterBodyType>({
         resolver: zodResolver(RegisterBody),
         defaultValues: {
@@ -25,16 +30,33 @@ const RegisterForm = () => {
         },
     })
 
-    // 2. Define a submit handler.
     async function onSubmit(values: RegisterBodyType) {
-        const result = await fetch(`${envConfig.NEXT_PUBLIC_API_URL}/auth/register`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(values),
-        }).then((res) => res.json())
-
+        try {
+            const result = await authApiRequests.register(values)
+            toast({
+                description: result.payload.message
+            })
+            await authApiRequests.auth({ sessionToken: result.payload.data.token })
+            sessionToken.value = result.payload.data.token
+            router.push('/me')
+        } catch (error: any) {
+            const errors = error.payload.errors as { field: string, message: string }[]
+            const status = error.status as number
+            if (status === 422) {
+                errors.forEach((error) => {
+                    form.setError(error.field as ('email' | 'password'), {
+                        type: 'server',
+                        message: error.message,
+                    })
+                })
+            } else {
+                toast({
+                    title: 'Lỗi',
+                    description: error.payload.message,
+                    variant: 'destructive'
+                })
+            }
+        }
     }
     return (
         <div className="flex justify-center">
